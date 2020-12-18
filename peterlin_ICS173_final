@@ -1,3 +1,18 @@
 %matplotlib inline
 
 #I'm following this tutorial: https://opensource.com/article/20/4/python-data-covid-19
+import matplotlib.pyplot as plt
+import pandas as pd
+
+#Downloading data
+URL_DATASET=r'https://raw.githubusercontent.com/datasets/covid-19/master/data/countries-aggregated.csv'
+df1=pd.read_csv(URL_DATASET)
+print(df.head(3))
+
+#Selecting data for Taiwan
+df_taiwan=df1[df1['Country']=='Taiwan']
+print(df_taiwan.head(3))
+
+#Plotting data
+df_taiwan.plot(kind='bar',x='Date',y='Deaths',color='red',ax=ax1)
+plt.show()
